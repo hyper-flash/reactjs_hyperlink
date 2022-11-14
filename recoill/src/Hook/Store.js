@@ -11,7 +11,7 @@ export const userState = atom({
 export const charCountState = selector({
     key: 'charCountState',
     get: ({ get }) => {
-        const text = get(userState);
+          const text = get(userState);
         return text.name.length;
     }
 })
