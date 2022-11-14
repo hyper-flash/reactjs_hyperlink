@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Helmet } from "react-helmet";
 import Plyr from "plyr-react"
 import "plyr-react/plyr.css"
+import { CSSProperties } from "react";
+import BeatLoader from "react-spinners/ClipLoader";
 
 function App() {
 
@@ -44,7 +45,7 @@ function App() {
 
 
   if (isLoading) {
-    return <div>....</div>;
+    return  <><BeatLoader color="#36d7b7" /></>;
   }
   return (
     <>
