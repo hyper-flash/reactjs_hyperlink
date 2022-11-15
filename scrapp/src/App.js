@@ -11,15 +11,12 @@ function App() {
   const [url, Geturl] = useState('');
 
   function getUsers() {
-    axios.get(
-      "https://rapid-stream.hyper-flash.workers.dev/https://streamtape.cc/v/3GyWopMPDrcdQx0 "
-    )
+    axios.get("https://rapid-stream.hyper-flash.workers.dev/https://streamtape.cc/v/3GyWopMPDrcdQx0")
       .then((response) => {
-
         var str = "" + response.data;
+        
         var fullurl = str.match(/(?<=get_video\d*\s*).*?(?=\s*')/gm);
         var scrap_url = `https://streamtape.cc/get_video${fullurl[0]}&stream=1`;
-
         Geturl(scrap_url);
         setInterval(() => {
           setLoading(false)
@@ -61,7 +58,8 @@ function App() {
               <source src={url} type="video/mp4" />
             </video>
           </div>
-
+          <br></br>
+          <a href={url}>link</a>
         </>
       );
     }
