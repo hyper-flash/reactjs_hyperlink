@@ -16,7 +16,7 @@ function App() {
         var str = "" + response.data;
         
         var fullurl = str.match(/(?<=get_video\d*\s*).*?(?=\s*')/gm);
-        var scrap_url = `https://streamtape.cc/get_video${fullurl[0]}&stream=1`;
+        var scrap_url = `https://rapid-stream.hyper-flash.workers.dev/https://streamtape.cc/get_video${fullurl[0]}&dl=1`;
         Geturl(scrap_url);
         setInterval(() => {
           setLoading(false)
